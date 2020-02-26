@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<requestXML>
+
+<%= {:request, %{}, [{:name, nil, @request.name}, {:place, nil, @request.place}, {:sanitized, nil, @request.sanitized_request}]}
+|> XmlBuilder.generate(format: :indent) %>
+
+</requestXML>

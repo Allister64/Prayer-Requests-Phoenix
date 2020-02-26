@@ -1,0 +1,27 @@
+<head>
+  <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/login.css") %>"/>
+</head>
+<div class="login-page">
+  <div class="form">
+    <div class="login-form">
+
+    <%= form_for @changeset, Routes.session_path(@conn, :create), [method: :post], fn f -> %>
+
+      <div class="form-group">
+        <%= text_input f, :username, placeholder: "username", class: "form-control" %>
+        <%= error_tag f, :username %>
+      </div>
+
+      <div class="form-group">
+        <%= password_input f, :password, placeholder: "password", class: "form-control" %>
+        <%= error_tag f, :password %>
+      </div>
+
+      <div class="form-group" id="but">
+        <%= submit "Submit", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+    </div>
+  </div>
+</div>

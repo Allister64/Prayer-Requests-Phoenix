@@ -1,0 +1,33 @@
+
+
+<div class="single-col-cont">
+  <div class="single-col">
+    <h1>Prayer Request</h1>
+    <ul>
+
+      <li>
+        <strong>Name:</strong>
+        <%= @request.name %>
+      </li>
+
+      <li>
+        <strong>Place:</strong>
+        <%= @request.place %>
+      </li>
+
+      <li>
+        <strong>Original Request:</strong>
+        <%= @request.original_request %>
+      </li>
+
+      <li>
+        <strong>Sanitized equest:</strong>
+        <%= @request.sanitized_request %>
+      </li>
+
+    </ul>
+
+    <span><%= link "Back", to: Routes.request_path(@conn, :index), class: "btn btn-lg btn-success" %></span>
+    <span><%= link "Edit", to: Routes.request_path(@conn, :edit, @request), class: "btn btn-lg btn-info" %></span>
+  </div>
+</div>

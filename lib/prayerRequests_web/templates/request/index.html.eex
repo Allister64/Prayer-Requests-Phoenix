@@ -1,0 +1,35 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Place</th>
+      <th>Original Request</th>
+      <th>Sanitized Request</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for request <- @requests do %>
+        <tr>
+          <td><%= truncate request.name %></td>
+          <td><%= truncate request.place %></td>
+          <td><%= truncate request.original_request, length: 50 %></td>
+          <td><%= truncate request.sanitized_request, length: 50 %></td>
+
+          <td>
+            <%= link "View", to: Routes.request_path(@conn, :show, request), class: "btn btn-lg btn-success" %>
+            <%= link "Edit", to: Routes.request_path(@conn, :edit, request), class: "btn btn-lg btn-info" %>
+            <%= link "Delete", to: Routes.request_path(@conn, :delete, request), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-lg btn-danger" %>
+          </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="paginBox">
+  <div class="pagin">
+    <%= pagination_links @page, next: "Next", previous: "Prev", view_style: :bootstrap_v4 %>
+  </div>
+</div>
+

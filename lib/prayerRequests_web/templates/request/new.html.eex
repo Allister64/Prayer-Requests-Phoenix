@@ -1,0 +1,7 @@
+<div class="single-col-cont">
+  <div class="single-col">
+
+    <h1>New Prayer Request</h1>
+    <%= render "form.html", Map.put(assigns, :action, Routes.request_path(@conn, :create)) %>
+  </div>
+</div>
